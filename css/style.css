@@ -1,0 +1,150 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+    font-family: arial;
+    outline: none
+}
+
+:root {
+    --trans: .4s
+}
+
+img{
+    
+    object-fit: cover
+}
+
+body {
+    background-image: url(../image/image-1.png);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    transition: background-image var(--trans);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden !important
+}
+
+header {
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+header > img {
+    max-width: 320px;
+    max-height: 50px;
+    cursor: pointer
+}
+
+header nav ul {
+    display: flex;
+    align-items: center
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 10px 10px;
+    transition-duration: var(--trans)
+}
+
+header nav ul li a {
+    color: #fff;
+    display: block;
+    transition-duration: var(--trans);
+    padding-top: 5px
+}
+
+header nav ul li a:active {
+    transform: translateY(6px)
+}
+
+header nav ul li:hover {
+    transform: translateX(3px)
+}
+
+header nav ul .reserve {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 30px;
+    border-radius: 30px;
+    transition-duration: var(--trans)
+}
+
+header ul .reserve:hover {
+    background-color: #fff;
+    color: red;
+    border-radius: 40px
+}
+
+
+.landing .info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    bottom: 50px;
+    left: 0
+}
+
+.landing .info div {
+    margin: 0 10px
+}
+
+.landing .info div h2 {
+    font-size: 40px;
+    font-weight: 400
+}
+
+.landing .info .line {
+    flex: 1;
+    height: 3px;
+    transition-duration: var(--trans)
+}
+
+@media(max-width:767px) {
+    .landing .info div h2 {
+        font-size: 20px
+    }
+
+    header > img {
+        max-width: 200px;
+        max-height: 43px
+    }
+}
+
+@media(max-width:450px){
+    
+    header{
+        flex-direction: column;
+    }
+    
+    header > img{
+        min-width: 100%;
+        min-height: 50px
+    }
+    
+    header nav ul .reserve{
+        display: none
+    }
+    
+    .landing .info{
+        display: block
+    }
+    
+    .landing .info div{
+        padding: 10px 0
+    }
+    
+    .landing .info .line{
+        padding: 0
+    }
+}
